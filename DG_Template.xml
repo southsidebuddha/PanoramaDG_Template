@@ -1,0 +1,61 @@
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+# NOTE: The following snippets are auto-generated and ordered automatically.
+# Changing the content of the snippet may be necessary, but do NOT change the order
+
+# There is a variable called snippets that we can use to auto-generate this section for us
+snippets:
+
+  - name: entry-786606
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/template
+    element: |-
+        <entry name="{{ some_template }}">
+                  <settings>
+                    <default-vsys>vsys1</default-vsys>
+                  </settings>
+                  <config>
+                    <devices>
+                      <entry name="localhost.localdomain">
+                        <vsys>
+                          <entry name="vsys1"/>
+                        </vsys>
+                      </entry>
+                    </devices>
+                  </config>
+                </entry>
+
+  - name: device-group-624302
+    xpath: /config/devices/entry[@name="localhost.localdomain"]
+    element: |-
+        <device-group>
+                <entry name="{{ some_devicegroup }}">
+                  <devices/>
+                </entry>
+              </device-group>
+
+  - name: max-internal-id-277025
+    xpath: /config/readonly
+    element: |-
+        <max-internal-id>13</max-internal-id>
+
+  - name: entry-990087
+    xpath: /config/readonly/devices/entry[@name="localhost.localdomain"]/template
+    element: |-
+        <entry name="MyTemplate">
+                    <id>12</id>
+                  </entry>
+
+  - name: device-group-172369
+    xpath: /config/readonly/devices/entry[@name="localhost.localdomain"]
+    element: |-
+        <device-group>
+                  <entry name="MyDeviceGroup">
+                    <id>13</id>
+                  </entry>
+                </device-group>
+
+
+# ---------------------------------------------------------------------
+# end of snippets section
