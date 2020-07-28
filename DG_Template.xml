@@ -8,23 +8,6 @@
 # There is a variable called snippets that we can use to auto-generate this section for us
 snippets:
 
-  - name: entry-786606
-    xpath: /config/devices/entry[@name="localhost.localdomain"]/template
-    element: |-
-        <entry name="{{ some_template }}">
-                  <settings>
-                    <default-vsys>vsys1</default-vsys>
-                  </settings>
-                  <config>
-                    <devices>
-                      <entry name="localhost.localdomain">
-                        <vsys>
-                          <entry name="vsys1"/>
-                        </vsys>
-                      </entry>
-                    </devices>
-                  </config>
-                </entry>
 
   - name: device-group-624302
     xpath: /config/devices/entry[@name="localhost.localdomain"]
@@ -35,18 +18,7 @@ snippets:
                 </entry>
               </device-group>
 
-  - name: max-internal-id-277025
-    xpath: /config/readonly
-    element: |-
-        <max-internal-id>13</max-internal-id>
-
-  - name: entry-990087
-    xpath: /config/readonly/devices/entry[@name="localhost.localdomain"]/template
-    element: |-
-        <entry name="{{ some_template }}">
-                    <id>12</id>
-                  </entry>
-
+  
   - name: device-group-172369
     xpath: /config/readonly/devices/entry[@name="localhost.localdomain"]
     element: |-
