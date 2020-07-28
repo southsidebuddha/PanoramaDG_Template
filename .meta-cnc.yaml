@@ -1,0 +1,106 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: Panorama_DG_Template
+# label used for menu selection
+label: 1Panorama_DG_Template
+description: Device Group and Template Configuration
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: panorama
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - Panorama_Workflow
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: hostname
+    description: Firewall hostname
+    default: myFirewall
+    type_hint: text
+  - name: choices
+    description: sample dropdown list
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: option1
+        value: option1
+      - key: option2
+        value: option2
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+# NOTE: The following snippets are auto-generated and ordered automatically.
+# Changing the content of the snippet may be necessary, but do NOT change the order
+
+# There is a variable called snippets that we can use to auto-generate this section for us
+snippets:
+
+  - name: entry-358436
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/template
+    element: |-
+        <entry name="MyTemplate">
+                  <settings>
+                    <default-vsys>vsys1</default-vsys>
+                  </settings>
+                  <config>
+                    <devices>
+                      <entry name="localhost.localdomain">
+                        <vsys>
+                          <entry name="vsys1"/>
+                        </vsys>
+                      </entry>
+                    </devices>
+                  </config>
+                </entry>
+
+  - name: device-group-933667
+    xpath: /config/devices/entry[@name="localhost.localdomain"]
+    element: |-
+        <device-group>
+                <entry name="MyDeviceGroup">
+                  <devices/>
+                </entry>
+              </device-group>
+
+  - name: max-internal-id-106609
+    xpath: /config/readonly
+    element: |-
+        <max-internal-id>13</max-internal-id>
+
+  - name: entry-352
+    xpath: /config/readonly/devices/entry[@name="localhost.localdomain"]/template
+    element: |-
+        <entry name="MyTemplate">
+                    <id>12</id>
+                  </entry>
+
+  - name: device-group-908593
+    xpath: /config/readonly/devices/entry[@name="localhost.localdomain"]
+    element: |-
+        <device-group>
+                  <entry name="MyDeviceGroup">
+                    <id>13</id>
+                  </entry>
+                </device-group>
+
+
+# ---------------------------------------------------------------------
+# end of snippets section
